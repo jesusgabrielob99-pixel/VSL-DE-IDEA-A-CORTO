@@ -1,0 +1,375 @@
+<!-- DE IDEA A CORTO · HTML PARA TIENDUP
+Pega todo este archivo una sola vez en la sección Avanzado → Código HTML.
+Las imágenes utilizan la dirección pública del sitio actual.
+El segundo recuadro rojo queda reservado para el próximo video.
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Poppins:wght@400;600;700;800;900&amp;display=swap">
+<style>
+#diac-landing { display:block; position:relative; isolation:isolate; font-size:16px; font-weight:400; line-height:normal; text-align:left; color:#fff; background:#000; margin:0; padding:0; border:0; max-width:none; }
+#diac-landing *, #diac-landing *::before, #diac-landing *::after { box-sizing:border-box; }
+#diac-landing p, #diac-landing h1, #diac-landing h2, #diac-landing h3 { color:inherit; font-family:inherit; letter-spacing:normal; }
+#diac-landing button { letter-spacing:normal; text-transform:none; }
+#diac-landing img { margin:0; padding:0; border:0; border-radius:0; }
+#diac-landing { color-scheme: dark; --red:#ff0000; --page-pad:clamp(20px,5vw,80px); font-family:Poppins,Arial,sans-serif; background:#000; color:#fff; }
+#diac-landing * { box-sizing:border-box; }
+#diac-landing { scroll-behavior:smooth; scroll-padding-top:24px; }
+#diac-landing { margin:0; background:#000; }
+#diac-landing a { color:inherit; }
+#diac-landing button { font:inherit; }
+#diac-landing { width:100%; overflow:clip; }
+#diac-landing .content-width { width:100%; max-width:1440px; padding-inline:var(--page-pad); margin-inline:auto; }
+#diac-landing .art-slice { position:relative; aspect-ratio:var(--w)/var(--h); overflow:hidden; flex-shrink:0; }
+#diac-landing .art-slice img { position:absolute; display:block; width:calc(1440/var(--w)*100%); height:auto; max-width:none; left:calc(var(--x)/var(--w)*-100%); top:calc(var(--y)/var(--h)*-100%); }
+#diac-landing .visually-hidden { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); clip-path:inset(50%); white-space:nowrap; border:0; }
+#diac-landing p { font-size:clamp(15px,1.65vw,23px); line-height:1.45; }
+#diac-landing h2, #diac-landing h3 { margin:0; }
+#diac-landing a:focus-visible, #diac-landing button:focus-visible { outline:3px solid #fff; outline-offset:5px; }
+#diac-landing .hero { display:grid; grid-template-columns:1fr 1.16fr; grid-template-rows:1fr auto auto 1fr; grid-template-areas:'logo people' 'copy people' 'cta people' '. people'; align-items:center; column-gap:0; padding-block:0; }
+#diac-landing .hero-logo { grid-area:logo; align-self:end; width:100%; max-width:610px; margin:24px 0 18px; }
+#diac-landing .hero-copy { grid-area:copy; padding-right:18px; }
+#diac-landing .hero-copy p { font-size:clamp(15px,1.45vw,22px); margin:0 0 22px; line-height:1.3; }
+#diac-landing .hero-people { grid-area:people; width:calc(100% + var(--page-pad)); align-self:end; }
+#diac-landing .discover, #diac-landing .purchase { display:flex; align-items:center; justify-content:center; gap:.7em; width:fit-content; max-width:100%; background:var(--red); border:0; border-radius:999px; padding:14px 28px; min-height:50px; color:#fff; font-weight:900; font-size:clamp(14px,1.45vw,22px); line-height:1.2; text-transform:uppercase; text-decoration:none; text-align:center; transition:background .2s,box-shadow .2s; }
+#diac-landing .discover:hover, #diac-landing .purchase:hover { background:#d90000; box-shadow:0 6px 26px #ff000044; }
+#diac-landing .discover { grid-area:cta; align-self:start; }
+#diac-landing .purchase { margin:36px auto 0; }
+#diac-landing .chevron, #diac-landing .down-arrow { display:block; flex-shrink:0; width:.6em; height:.6em; border-top:.25em solid white; border-right:.25em solid white; transform:rotate(45deg); }
+#diac-landing .down-arrow { transform:rotate(135deg) translate(-2px,-2px); }
+#diac-landing .brand-strip { width:100%; }
+#diac-landing .presentation { padding-top:44px; padding-bottom:56px; text-align:center; }
+#diac-landing .vsl-heading { width:min(84%,750px); margin-inline:auto; }
+#diac-landing .presentation-intro { margin:24px 0 38px; line-height:1.35; }
+#diac-landing .video-frame { width:100%; max-width:1230px; margin:auto; background:var(--red); padding:3px; }
+#diac-landing .video-slot { position:relative; width:100%; aspect-ratio:16/9; background:#000; }
+#diac-landing .video-slot iframe, #diac-landing .video-slot video { position:absolute; display:block; inset:0; width:100%; height:100%; border:0; object-fit:contain; }
+#diac-landing .video-fallback { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:16px; text-align:center; }
+#diac-landing .video-fallback p { margin:0; }
+#diac-landing .video-fallback a { padding:12px 20px; border-radius:30px; background:var(--red); text-decoration:none; font-weight:800; min-height:44px; }
+#diac-landing .story-flow { position:relative; isolation:isolate; overflow:clip; }
+#diac-landing .edge-art { position:absolute; z-index:-1; pointer-events:none; opacity:.85; top:0; width:min(12vw,160px); }
+#diac-landing .edge-left { left:0; mask-image:linear-gradient(90deg,#000,transparent); }
+#diac-landing .edge-right { right:0; mask-image:linear-gradient(-90deg,#000,transparent); }
+#diac-landing .process-intro { text-align:center; padding-bottom:50px; }
+#diac-landing .process-intro h2, #diac-landing .behind-scenes h2 { font-family:'Bebas Neue','Arial Narrow',sans-serif; font-weight:400; font-size:clamp(35px,5.2vw,78px); line-height:1; text-wrap:balance; }
+#diac-landing .process-intro p { max-width:1060px; margin:22px auto 0; text-wrap:balance; }
+#diac-landing .method { padding-bottom:80px; }
+#diac-landing .method-heading { width:100%; margin:0 auto 34px; }
+#diac-landing .method-layout { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(28px,5vw,80px); align-items:center; }
+#diac-landing .method-copy p { margin:0 0 24px; }
+#diac-landing .method-copy p:last-child { margin-bottom:0; }
+#diac-landing .episodes { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+#diac-landing .episode { position:relative; display:block; min-width:0; overflow:hidden; border-radius:2px; }
+#diac-landing .episode .art-slice { width:100%; transition:filter .25s; }
+#diac-landing .episode-play { position:absolute; display:grid; place-items:center; left:50%; top:50%; transform:translate(-50%,-50%) scale(.8); width:54px; height:40px; border-radius:12px; background:#f00; color:white; font-size:23px; line-height:1; opacity:0; transition:opacity .2s,transform .25s; box-shadow:0 6px 24px #0008; }
+#diac-landing .episode:hover .episode-play, #diac-landing .episode:focus-visible .episode-play { opacity:1; transform:translate(-50%,-50%) scale(1); }
+#diac-landing .episode:hover .art-slice, #diac-landing .episode:focus-visible .art-slice { filter:brightness(.8); }
+#diac-landing .pain { padding-bottom:30px; }
+#diac-landing .pain-heading { width:min(100%,930px); margin:auto; }
+#diac-landing .pain-intro { margin:10px 0 35px; text-align:center; }
+#diac-landing .pain-layout { display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:center; }
+#diac-landing .pain-list { list-style:none; padding:0; margin:0; display:grid; gap:30px; }
+#diac-landing .pain-list li { display:grid; grid-template-columns:70px minmax(0,1fr); align-items:start; gap:8px; }
+#diac-landing .pain-number { font-family:'Bebas Neue','Arial Narrow',sans-serif; font-size:clamp(90px,10vw,150px); line-height:.95; }
+#diac-landing .pain-list li>div { padding:8px 14px 10px; background:linear-gradient(90deg,#f008,transparent 95%); }
+#diac-landing .pain-list h3 { font-family:'Bebas Neue','Arial Narrow',sans-serif; font-weight:400; font-size:clamp(30px,4vw,58px); line-height:1; text-transform:uppercase; }
+#diac-landing .pain-list p { font-size:clamp(13px,1.2vw,18px); line-height:1.4; margin:10px 0 0; }
+#diac-landing .laptop-art { width:calc(100% + var(--page-pad)); clip-path:polygon(100% 2%,100% 100%,30% 100%,30% 84%,43% 80%,4% 36%,4% 32%); }
+#diac-landing .bridge { padding-block:30px 50px; }
+#diac-landing .bridge-heading { width:min(100%,1100px); margin:auto; }
+#diac-landing .process-marquee { position:relative; margin-block:24px 70px; transform:rotate(-1.6deg); background:#f00; border-block:5px solid #ffffffb3; box-shadow:0 0 0 4px #ff0000,0 0 0 9px #7778; }
+#diac-landing .marquee-window { overflow:hidden; }
+#diac-landing .marquee-track { display:flex; width:max-content; animation:diac-marquee 26s linear infinite; }
+#diac-landing .marquee-group { display:flex; flex:0 0 auto; min-width:100vw; align-items:center; justify-content:space-around; gap:24px; padding:12px 28px; font-family:'Bebas Neue','Arial Narrow',sans-serif; font-size:clamp(48px,7vw,112px); line-height:1.1; white-space:nowrap; }
+#diac-landing .ribbon-arrow { font-family:Arial,sans-serif; font-size:.9em; font-weight:900; }
+@keyframes diac-marquee { to { transform:translateX(-50%); } }
+#diac-landing .marquee-state:checked ~ .marquee-window .marquee-track { animation-play-state:paused; }
+#diac-landing .marquee-toggle { position:absolute; right:14px; bottom:-24px; display:grid; place-items:center; width:44px; height:44px; padding:0; border:1px solid #fff9; border-radius:50%; background:#080808; color:#fff; cursor:pointer; }
+#diac-landing .marquee-control-icon::before { content:'Ⅱ'; font-weight:900; font-size:20px; }
+#diac-landing .marquee-state:checked ~ .marquee-toggle .marquee-control-icon::before { content:'▶'; font-size:15px; }
+#diac-landing .curriculum { padding-top:30px; padding-bottom:70px; text-align:center; }
+#diac-landing .curriculum h2 { font-family:'Bebas Neue','Arial Narrow',sans-serif; font-size:clamp(44px,6.3vw,94px); line-height:.95; font-weight:400; margin-bottom:64px; }
+#diac-landing .curriculum h2>span { color:#f00; }
+#diac-landing .stage-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; position:relative; isolation:isolate; }
+#diac-landing .stage-card { --stage-color:#ff0000; appearance:none; position:relative; z-index:0; display:flex; flex-direction:column; align-items:stretch; text-align:left; color:white; border:1px solid #ffffff9e; border-radius:32px 32px 10px 10px; background:linear-gradient(var(--stage-color) 5%,color-mix(in srgb,var(--stage-color) 64%,#000) 55%,#080000 100%); padding:26px 16px 96px; min-height:480px; cursor:pointer; transform-origin:center bottom; transition:transform .45s cubic-bezier(.2,.8,.2,1.3),box-shadow .45s,border-radius .45s; }
+#diac-landing .stage-card::before { content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none; background:radial-gradient(ellipse at 22% 0%,#ffffff55,transparent 48%); opacity:0; transition:opacity .35s; }
+#diac-landing .stage-02 { --stage-color:#ff3700; }
+#diac-landing .stage-03 { --stage-color:#ff7800; }
+#diac-landing .stage-04 { --stage-color:#ffa800; }
+#diac-landing .stage-title { display:block; font-family:'Bebas Neue','Arial Narrow',sans-serif; font-size:clamp(27px,3.3vw,48px); line-height:1; white-space:nowrap; margin-bottom:20px; }
+#diac-landing .stage-lessons { display:grid; gap:6px; font-size:clamp(12px,1.02vw,16px); line-height:1.45; }
+#diac-landing .stage-card.is-active, #diac-landing .stage-card:focus-visible { z-index:2; transform:translateY(-20px) scale(1.025); border-radius:42px 42px 22px 22px; box-shadow:0 24px 64px color-mix(in srgb,var(--stage-color) 40%,transparent); }
+#diac-landing .stage-card.is-active::before, #diac-landing .stage-card:focus-visible::before { opacity:1; }
+@media (hover:hover) and (pointer:fine) {
+#diac-landing .stage-card:hover { z-index:2; transform:translateY(-20px) scale(1.025); border-radius:42px 42px 22px 22px; box-shadow:0 24px 64px color-mix(in srgb,var(--stage-color) 40%,transparent); }
+#diac-landing .stage-card:hover::before { opacity:1; }
+}
+#diac-landing .stage-purchase { position:relative; z-index:3; margin-top:-50px; }
+#diac-landing .behind-scenes { padding-block:30px 70px; }
+#diac-landing .behind-scenes h2 { text-align:center; margin-bottom:40px; }
+#diac-landing .behind-layout { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(24px,4vw,64px); align-items:center; }
+#diac-landing .behind-layout h3 { font-weight:800; color:#f00; font-size:clamp(16px,2vw,27px); text-transform:uppercase; line-height:1.2; }
+#diac-landing .behind-layout p { font-size:clamp(14px,1.35vw,20px); }
+#diac-landing .example-placeholder { width:100%; aspect-ratio:632/429; background:#f00; }
+#diac-landing .offer { padding-block:10px 60px; }
+#diac-landing .offer-art { width:min(100%,1095px); margin:auto; }
+#diac-landing .offer .purchase { margin-top:20px; }
+#diac-landing .faq { padding-top:40px; }
+#diac-landing .faq-heading { width:min(100%,925px); margin:0 auto 24px; clip-path:polygon(0 0,100% 0,100% 100%,9% 100%,9% 58%,0 58%); }
+#diac-landing .faq-layout { display:grid; grid-template-columns:.4fr 1fr; gap:30px; align-items:center; }
+#diac-landing .faq-character { width:min(100%,320px); margin:auto; mask-image:linear-gradient(to right,#000 80%,transparent); }
+#diac-landing .faq-body { padding-bottom:30px; }
+#diac-landing .faq-list { display:grid; gap:30px; }
+#diac-landing .faq-item { display:grid; grid-template-columns:72px minmax(0,1fr); gap:12px; }
+#diac-landing .faq-number { font-size:clamp(70px,8vw,120px); color:#8c8c8c; font-weight:900; line-height:1; }
+#diac-landing .faq-item h3 { display:inline; background:#f00; box-shadow:6px 0 #f00,-6px 0 #f00; box-decoration-break:clone; -webkit-box-decoration-break:clone; font-size:clamp(13px,1.35vw,19px); text-transform:uppercase; font-weight:800; line-height:1.4; }
+#diac-landing .faq-item p { margin:14px 0 0; font-size:clamp(13px,1.35vw,19px); line-height:1.5; }
+#diac-landing .closing-wrap { width:100%; height:clamp(100px,18vw,260px); overflow:hidden; }
+#diac-landing .closing-art { width:100%; }
+@media(min-width:1700px) { #diac-landing .content-width { max-width:1600px; } }
+@media(max-width:1000px) {
+#diac-landing .hero-copy p { margin-bottom:15px; }
+#diac-landing .discover { font-size:14px; padding:12px 18px; }
+#diac-landing .stage-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+#diac-landing .stage-card { min-height:340px; padding:24px 22px 70px; }
+#diac-landing .stage-title { font-size:42px; }
+#diac-landing .stage-lessons { font-size:15px; }
+#diac-landing .faq-layout { grid-template-columns:.3fr 1fr; gap:18px; }
+#diac-landing .faq-item { grid-template-columns:48px minmax(0,1fr); }
+#diac-landing .faq-character { width:100%; }
+}
+@media(max-width:650px) {
+#diac-landing { --page-pad:20px; }
+#diac-landing .hero { grid-template-columns:.95fr 1.05fr; grid-template-rows:auto auto auto; grid-template-areas:'logo people' 'copy copy' 'cta cta'; gap:0; padding-top:0; padding-bottom:26px; }
+#diac-landing .hero-logo { margin:16px 0; align-self:center; }
+#diac-landing .hero-people { width:calc(100% + 20px); }
+#diac-landing .hero-copy { padding:12px 0 0; text-align:center; }
+#diac-landing .hero-copy p { font-size:16px; line-height:1.4; margin:0 0 16px; }
+#diac-landing .discover { margin:auto; width:100%; font-size:15px; min-height:48px; }
+#diac-landing .brand-strip { min-height:18px; }
+#diac-landing .brand-strip img { top:calc(var(--y)/var(--h)*-100%); }
+#diac-landing .presentation { padding-top:28px; padding-bottom:38px; }
+#diac-landing .vsl-heading { width:100%; }
+#diac-landing .presentation-intro { font-size:14px; margin:16px 0 24px; }
+#diac-landing .wide-only { display:none; }
+#diac-landing .purchase { font-size:14px; padding:13px 20px; min-height:48px; margin-top:24px; }
+#diac-landing .process-intro { padding-bottom:28px; }
+#diac-landing .process-intro h2 { font-size:39px; }
+#diac-landing .process-intro p { font-size:15px; margin-top:15px; }
+#diac-landing .method { padding-bottom:44px; }
+#diac-landing .method-heading { width:calc(100% + 16px); margin:0 -8px 22px; }
+#diac-landing .method-layout { grid-template-columns:1fr; gap:26px; }
+#diac-landing .method-copy p { font-size:16px; margin-bottom:18px; }
+#diac-landing .episodes { gap:10px; }
+#diac-landing .episode-play { width:34px; height:26px; border-radius:7px; font-size:15px; opacity:.85; transform:translate(-50%,-50%); }
+#diac-landing .pain-heading { width:calc(100% + 12px); margin-inline:-6px; }
+#diac-landing .pain-intro { font-size:13px; margin-bottom:24px; }
+#diac-landing .pain-layout { grid-template-columns:1fr; }
+#diac-landing .pain-list { gap:20px; }
+#diac-landing .pain-list li { grid-template-columns:40px minmax(0,1fr); gap:4px; }
+#diac-landing .pain-number { font-size:76px; }
+#diac-landing .pain-list h3 { font-size:33px; }
+#diac-landing .pain-list p { font-size:14px; margin-top:7px; }
+#diac-landing .pain-list li>div { padding:6px 10px 10px; }
+#diac-landing .laptop-art { width:90%; max-width:400px; justify-self:end; margin-top:-30px; margin-bottom:-65px; }
+#diac-landing .bridge { padding-block:20px 24px; }
+#diac-landing .bridge-heading { width:100%; }
+#diac-landing .process-marquee { margin-block:24px 50px; border-block-width:3px; }
+#diac-landing .marquee-group { font-size:52px; gap:18px; padding:12px 20px; }
+#diac-landing .marquee-toggle { right:12px; }
+#diac-landing .curriculum { padding-top:20px; padding-bottom:35px; }
+#diac-landing .curriculum h2 { font-size:46px; margin-bottom:42px; }
+#diac-landing .stage-grid { gap:16px 10px; }
+#diac-landing .stage-card { padding:20px 12px 60px; min-height:300px; border-radius:24px 24px 8px 8px; }
+#diac-landing .stage-title { font-size:clamp(23px,7vw,29px); margin-bottom:16px; }
+#diac-landing .stage-lessons { font-size:12px; gap:7px; }
+#diac-landing .stage-purchase { margin-top:24px; }
+#diac-landing .behind-scenes { padding-block:30px 35px; }
+#diac-landing .behind-scenes h2 { font-size:40px; margin-bottom:26px; }
+#diac-landing .behind-layout { grid-template-columns:1fr; gap:18px; }
+#diac-landing .behind-layout h3 { font-size:18px; }
+#diac-landing .behind-layout p { font-size:15px; }
+#diac-landing .example-placeholder { aspect-ratio:16/9; }
+#diac-landing .offer { padding-inline:12px; padding-bottom:35px; }
+#diac-landing .offer .purchase { margin-top:16px; }
+#diac-landing .faq { padding-top:20px; }
+#diac-landing .faq-heading { width:100%; margin-bottom:24px; }
+#diac-landing .faq-layout { grid-template-columns:1fr; position:relative; gap:12px; }
+#diac-landing .faq-character { width:90px; position:absolute; left:-24px; bottom:0; z-index:-1; opacity:.45; }
+#diac-landing .faq-body { padding-bottom:26px; }
+#diac-landing .faq-list { gap:28px; }
+#diac-landing .faq-item { grid-template-columns:35px minmax(0,1fr); gap:10px; }
+#diac-landing .faq-number { font-size:58px; }
+#diac-landing .faq-item h3 { font-size:12px; }
+#diac-landing .faq-item p { font-size:14px; }
+#diac-landing .faq-body .purchase { margin-top:30px; }
+}
+@media(prefers-reduced-motion:reduce) {
+#diac-landing { scroll-behavior:auto; }
+#diac-landing *, #diac-landing *::before, #diac-landing *::after { animation:none !important; transition:none !important; }
+#diac-landing .stage-card:hover, #diac-landing .stage-card.is-active, #diac-landing .stage-card:focus-visible { transform:none; }
+#diac-landing .marquee-toggle { display:none; }
+#diac-landing .marquee-track { width:100%; }
+#diac-landing .marquee-group { min-width:0; width:100%; flex-wrap:wrap; font-size:clamp(24px,5vw,72px); gap:12px; }
+#diac-landing .marquee-group + .marquee-group { display:none; }
+#diac-landing .ribbon-arrow { display:none; }
+}
+/* Isolate the original character without altering the source artwork. */
+#diac-landing .faq-character {
+ mask-image:none;
+ clip-path:polygon(0.9% 5.3%,9.8% 5.3%,18.1% 6.7%,27% 8.8%,33.5% 7.1%,41.9% 6.5%,55.8% 7.3%,56.7% 4.1%,60.5% 1.6%,66.5% .1%,76.3% 0,76.5% 1%,69.8% 1.1%,65.1% 2.2%,61.6% 4.1%,60% 9.2%,69.3% 10.4%,76% 12.1%,76.7% 14.3%,76.5% 19.9%,75.1% 21.1%,77% 22.6%,76.3% 27.5%,84.2% 28.8%,88.4% 30.1%,90.7% 32.8%,92.3% 36.5%,96.3% 40.3%,99.3% 42.5%,99.3% 44.8%,96% 45.8%,77% 45.6%,79.1% 51.4%,83.7% 57.5%,85.3% 62.2%,83.3% 68.3%,81.2% 74.8%,79.8% 82.2%,75.8% 89.9%,76% 91.8%,81.4% 94.2%,90% 95.9%,97.9% 96.9%,99.1% 97.8%,95.8% 98.6%,90.9% 99%,87.7% 98.6%,86.3% 99.3%,81.4% 99%,72.1% 97.7%,65.1% 96.5%,62.3% 95%,62.1% 91.9%,64.9% 88.2%,64.4% 80.9%,62.8% 71.2%,59.1% 58.5%,54.9% 58.5%,51.4% 65.8%,46.3% 72.4%,43.3% 76.9%,42.1% 83.5%,39.5% 89.5%,38.8% 93.5%,36.5% 96.3%,31.9% 98.6%,27% 100%,22.1% 100%,19.3% 99.9%,15.8% 99.9%,13.5% 99.4%,10.2% 99.4%,8.6% 98.5%,11.9% 97.1%,18.4% 95.4%,23% 93.3%,25.6% 90.9%,27.2% 87.9%,27% 82%,26.7% 77.3%,29.1% 73.1%,30% 68%,29.8% 63.1%,32.3% 57.8%,35.6% 51.9%,39.1% 47.1%,38.1% 46.3%,32.3% 45.6%,31.2% 44.1%,31.6% 42.7%,30.7% 41.6%,33.7% 40.3%,30% 36.7%,25.8% 32%,24% 28.6%,26.5% 26.6%,32.3% 25.2%,44% 23.9%,44.4% 22.4%,36.7% 21.2%,29.8% 19.5%,24.2% 17.1%,22.1% 14.9%,19.8% 12.7%,20% 10.9%,21.9% 9%,26% 8.7%,21.9% 7.5%,15.1% 6.3%,8.8% 5.9%,.9% 6.2%);
+}
+@media(max-width:650px) {
+#diac-landing .faq-layout { grid-template-columns:70px minmax(0,1fr); align-items:start; gap:8px; }
+#diac-landing .faq-character { position:sticky; top:24px; left:auto; bottom:auto; width:100px; margin:36px 0 0 -20px; opacity:1; z-index:0; }
+#diac-landing .faq-item { grid-template-columns:26px minmax(0,1fr); gap:6px; }
+#diac-landing .faq-number { font-size:44px; }
+#diac-landing .faq-body .purchase { padding-inline:12px; }
+}
+#diac-landing { --diac-screen-width:100%; width:var(--diac-screen-width); margin-inline:calc(50% - var(--diac-screen-width)/2); }
+#diac-landing .stage-title { white-space:normal; }
+#diac-landing .marquee-toggle { cursor:pointer; margin:0; font-weight:400; }
+#diac-landing .marquee-state:focus-visible ~ .marquee-toggle { outline:3px solid #fff; outline-offset:5px; }
+#diac-landing .stage-card:focus { z-index:2; transform:translateY(-20px) scale(1.025); }
+@media(prefers-reduced-motion:reduce) { #diac-landing .stage-card:focus { transform:none; } }
+
+</style>
+<div id="diac-landing" class="landing" lang="es" role="region" aria-label="De Idea a Corto">
+  <header class="hero content-width">
+    <h1 class="visually-hidden">De Idea a Corto</h1>
+    <div class="art-slice hero-logo" style="--x:84;--y:114;--w:610;--h:270" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async" fetchpriority="high"></div>
+    <div class="hero-copy">
+      <p>Aprende el proceso para crear producciones cinematográficas con inteligencia artificial, desde la primera idea hasta el montaje final.</p>
+      <p>Una metodología en cuatro etapas. Sin necesitar un equipo tradicional de filmación.</p>
+    </div>
+    <a class="discover" href="#diac-presentacion">Descubre cómo funciona<span class="down-arrow" aria-hidden="true"></span></a>
+    <div class="art-slice hero-people" style="--x:716;--y:0;--w:724;--h:794" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async" fetchpriority="high"></div>
+  </header>
+  <div class="art-slice brand-strip" style="--x:0;--y:794;--w:1440;--h:88" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div>
+  <section id="diac-presentacion" class="presentation content-width" aria-labelledby="diac-presentation-title">
+    <h2 id="diac-presentation-title" class="visually-hidden">Así se construye una historia con IA</h2>
+    <div class="art-slice vsl-heading" style="--x:260;--y:910;--w:910;--h:390" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div>
+    <p class="presentation-intro">Descubre el método detrás de producciones<br class="wide-only"> como la <strong>Comedia Absurda Venezolana.</strong></p>
+    <div class="video-frame"><div id="diac-vsl" class="video-slot" aria-label="Video de presentación del curso"><iframe id="diac-vsl-player" src="https://www.youtube-nocookie.com/embed/sUT9b-HiK-k?rel=0&amp;playsinline=1" title="De Idea a Corto: video de presentación" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div>
+    <a class="purchase " href="https://go.hotmart.com/B107939959B?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Quiero crear mi primer corto: ir a Hotmart (abre en otra pestaña)">Quiero crear mi primer corto<span class="chevron" aria-hidden="true"></span></a>
+  </section>
+  <div class="story-flow">
+    <div class="art-slice edge-art edge-left" style="--x:0;--y:2100;--w:110;--h:3000" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div>
+    <div class="art-slice edge-art edge-right" style="--x:1335;--y:2100;--w:105;--h:3000" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div>
+    <section class="process-intro content-width">
+      <h2>Un proceso para llevar tu idea hasta el final</h2>
+      <p>De Idea a Corto te enseña un flujo completo para pensar, diseñar, generar y terminar una producción audiovisual hecha con IA.</p>
+    </section>
+    <section class="method content-width" aria-labelledby="diac-method-title">
+      <h2 id="diac-method-title" class="visually-hidden">La diferencia está en el método</h2>
+      <div class="art-slice method-heading" style="--x:150;--y:2635;--w:1140;--h:200" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div>
+      <div class="method-layout">
+        <div class="method-copy"><p>Puedes tener una gran idea y muchas herramientas a tu alcance. Pero sin historia, dirección visual y organización es difícil lograr que todas las escenas formen parte del mismo proyecto.</p><p>Este curso conecta cada etapa para que avances de una idea inicial a una pieza audiovisual terminada.</p></div>
+        <div class="episodes" aria-label="Episodios de Comedia Absurda Venezolana"><a class="episode" href="https://www.youtube.com/watch?v=vVW4ltgl_GE" target="_blank" rel="noopener noreferrer" aria-label="Ver episodio 1: Neutro en YouTube (abre en otra pestaña)"><div class="art-slice " style="--x:684;--y:2858;--w:313;--h:177" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div><span class="episode-play" aria-hidden="true">▶</span></a><a class="episode" href="https://www.youtube.com/watch?v=fnMbAnjjZWI" target="_blank" rel="noopener noreferrer" aria-label="Ver episodio 2: 8 horas en YouTube (abre en otra pestaña)"><div class="art-slice " style="--x:1016;--y:2858;--w:313;--h:177" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div><span class="episode-play" aria-hidden="true">▶</span></a><a class="episode" href="https://www.youtube.com/watch?v=9QU0W7egCN0" target="_blank" rel="noopener noreferrer" aria-label="Ver episodio 3: La odisea en YouTube (abre en otra pestaña)"><div class="art-slice " style="--x:683;--y:3047;--w:313;--h:177" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div><span class="episode-play" aria-hidden="true">▶</span></a><a class="episode" href="https://www.youtube.com/watch?v=-L56uhvU64A&amp;t=26s" target="_blank" rel="noopener noreferrer" aria-label="Ver episodio 4: El fin en YouTube (abre en otra pestaña)"><div class="art-slice " style="--x:1015;--y:3047;--w:313;--h:177" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div><span class="episode-play" aria-hidden="true">▶</span></a><a class="episode" href="https://www.youtube.com/watch?v=Z7u0LS8aNiQ&amp;t=2s" target="_blank" rel="noopener noreferrer" aria-label="Ver episodio 5: 17:5 en YouTube (abre en otra pestaña)"><div class="art-slice " style="--x:684;--y:3246;--w:313;--h:177" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div><span class="episode-play" aria-hidden="true">▶</span></a><a class="episode" href="https://www.youtube.com/watch?v=R2ktjQ_1ixg&amp;t=16s" target="_blank" rel="noopener noreferrer" aria-label="Ver episodio 6: Final en YouTube (abre en otra pestaña)"><div class="art-slice " style="--x:1014;--y:3246;--w:313;--h:177" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div><span class="episode-play" aria-hidden="true">▶</span></a></div>
+      </div>
+    </section>
+    <section class="pain content-width" aria-labelledby="diac-pain-title">
+      <h2 id="diac-pain-title" class="visually-hidden">No te faltan ideas. Te falta un proceso.</h2>
+      <div class="art-slice pain-heading" style="--x:230;--y:3568;--w:1010;--h:352" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div>
+      <p class="pain-intro">Quizá alguna de estas situaciones te resulte familiar:</p>
+      <div class="pain-layout"><ol class="pain-list"><li><span class="pain-number" aria-hidden="true">1</span><div><h3>Tengo la idea…</h3><p>pero no sé cómo organizarla para convertirla en escenas.</p></div></li><li><span class="pain-number" aria-hidden="true">2</span><div><h3>Cada escena cambia</h3><p>Los personajes, el estilo visual o el ambiente no mantienen una continuidad clara.</p></div></li><li><span class="pain-number" aria-hidden="true">3</span><div><h3>Hay muchas herramientas</h3><p>Pero no sé qué papel cumple cada una dentro de la producción.</p></div></li><li><span class="pain-number" aria-hidden="true">4</span><div><h3>No logro terminar</h3><p>Genero clips, pero me cuesta unirlos en una historia con inicio, desarrollo y final.</p></div></li></ol><div class="art-slice laptop-art" style="--x:740;--y:3850;--w:700;--h:1150" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div></div>
+    </section>
+    <section class="bridge content-width" aria-label="De no sé cómo empezar a tener un plan de producción"><div class="art-slice bridge-heading" style="--x:170;--y:4995;--w:1100;--h:325" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div></section>
+  </div>
+  <section class="process-marquee" aria-label="Las cuatro etapas: pensar, diseñar, generar y terminar">
+    <input type="checkbox" id="diac-pausar-cinta" class="visually-hidden marquee-state" aria-label="Pausar desplazamiento de la cinta">
+    <div class="marquee-window" aria-hidden="true"><div class="marquee-track"><div class="marquee-group"><span>PENSAR</span><span class="ribbon-arrow" aria-hidden="true">›</span><span>DISEÑAR</span><span class="ribbon-arrow" aria-hidden="true">›</span><span>GENERAR</span><span class="ribbon-arrow" aria-hidden="true">›</span><span>TERMINAR</span><span class="ribbon-arrow" aria-hidden="true">›</span></div><div class="marquee-group"><span>PENSAR</span><span class="ribbon-arrow" aria-hidden="true">›</span><span>DISEÑAR</span><span class="ribbon-arrow" aria-hidden="true">›</span><span>GENERAR</span><span class="ribbon-arrow" aria-hidden="true">›</span><span>TERMINAR</span><span class="ribbon-arrow" aria-hidden="true">›</span></div></div></div>
+    <label class="marquee-toggle" for="diac-pausar-cinta" title="Pausar o reanudar la cinta"><span class="marquee-control-icon" aria-hidden="true"></span><span class="visually-hidden">Pausar o reanudar la cinta</span></label>
+  </section>
+  <section class="curriculum content-width" aria-labelledby="diac-curriculum-title">
+    <h2 id="diac-curriculum-title"><span>Cuatro etapas.</span><br>Una historia completa.</h2>
+    <div class="stage-grid" aria-label="Etapas del curso"><button type="button" class="stage-card stage-01" aria-pressed="false" aria-labelledby="diac-stage-title-01" aria-describedby="diac-stage-detail-01"><span class="stage-title" id="diac-stage-title-01">01 · Pensar</span><span class="stage-lessons" id="diac-stage-detail-01"><span>M0 Antes de empezar</span><span>M1 La idea</span><span>M2 Vaciar la idea</span><span>M3 Convertir en guion</span></span></button><button type="button" class="stage-card stage-02" aria-pressed="false" aria-labelledby="diac-stage-title-02" aria-describedby="diac-stage-detail-02"><span class="stage-title" id="diac-stage-title-02">02 · Diseñar</span><span class="stage-lessons" id="diac-stage-detail-02"><span>M4 Preproducción visual</span><span>M5 Creación de fichas</span><span>M6 Organizar el proyecto</span></span></button><button type="button" class="stage-card stage-03" aria-pressed="false" aria-labelledby="diac-stage-title-03" aria-describedby="diac-stage-detail-03"><span class="stage-title" id="diac-stage-title-03">03 · Generar</span><span class="stage-lessons" id="diac-stage-detail-03"><span>M7 Del guion al prompt</span><span>M8 Construir prompts</span><span>M9 Seedance</span><span>M10 Prueba y error</span><span>M11 Continuidad</span></span></button><button type="button" class="stage-card stage-04" aria-pressed="false" aria-labelledby="diac-stage-title-04" aria-describedby="diac-stage-detail-04"><span class="stage-title" id="diac-stage-title-04">04 · Terminar</span><span class="stage-lessons" id="diac-stage-detail-04"><span>M12 Generaciones</span><span>M13 Sonido</span><span>M14 Diálogos</span><span>M15 Acabado visual</span><span>M16 Revisión</span></span></button></div>
+    <a class="purchase stage-purchase" href="https://go.hotmart.com/B107939959B?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Quiero aprender el proceso: ir a Hotmart (abre en otra pestaña)">Quiero aprender el proceso<span class="chevron" aria-hidden="true"></span></a>
+  </section>
+  <section class="behind-scenes content-width" aria-labelledby="diac-behind-title">
+    <h2 id="diac-behind-title">Ya has visto lo que la IA puede hacer</h2>
+    <div class="behind-layout"><div><h3>Ahora descubre<br>el detrás de cámaras</h3><p>Explora cómo se plantea una escena, se define un personaje, se mantiene una estética y se organizan los elementos del proyecto.</p><p>El propósito no es copiar un resultado: es entender el camino creativo para desarrollar el tuyo.</p></div><div id="diac-example-video" class="example-placeholder" aria-hidden="true"></div></div>
+  </section>
+  <section class="offer content-width" aria-labelledby="diac-offer-title">
+    <div class="visually-hidden"><h2 id="diac-offer-title">Tu historia merece salir de tu cabeza.</h2><p>Conoce un proceso completo para desarrollar cortometrajes con IA, desde la primera idea hasta el montaje final.</p><p>Precio anunciado: $60. 4 módulos. Metodología paso a paso. Ejemplos de producción.</p></div>
+    <div class="art-slice offer-art" style="--x:175;--y:7723;--w:1095;--h:965" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div>
+    <a class="purchase " href="https://go.hotmart.com/B107939959B?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Quiero el curso: ir a Hotmart (abre en otra pestaña)">Quiero el curso<span class="chevron" aria-hidden="true"></span></a>
+  </section>
+  <section class="faq content-width" aria-labelledby="diac-faq-title">
+    <h2 id="diac-faq-title" class="visually-hidden">Preguntas frecuentes</h2>
+    <div class="art-slice faq-heading" style="--x:290;--y:8935;--w:925;--h:310" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div>
+    <div class="faq-layout"><div class="art-slice faq-character" style="--x:40;--y:9120;--w:430;--h:1470" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div><div class="faq-body"><div class="faq-list"><article class="faq-item"><span class="faq-number" aria-hidden="true">1</span><div><h3>¿Qué voy a aprender en el curso?</h3><p>Aprenderás una metodología dividida en cuatro etapas: Pensar, Diseñar, Generar y Terminar. Desde crear historias, personajes y escenarios hasta generar escenas con IA y realizar el montaje final.</p></div></article><article class="faq-item"><span class="faq-number" aria-hidden="true">2</span><div><h3>¿Es el mismo proceso que utilizaron para crear la Comedia Absurda Venezolana?</h3><p>Conocerás el flujo creativo y de producción utilizado para desarrollar proyectos cinematográficos con inteligencia artificial, tomando como referencia trabajos reales como la Comedia Absurda Venezolana.</p></div></article><article class="faq-item"><span class="faq-number" aria-hidden="true">3</span><div><h3>¿Necesito experiencia previa en inteligencia artificial?</h3><p>No. El curso está diseñado para que puedas aprender el proceso desde cero. Te guiaremos paso a paso, desde desarrollar tu idea hasta convertirla en una producción audiovisual con inteligencia artificial.</p></div></article></div><a class="purchase " href="https://go.hotmart.com/B107939959B?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Comprar curso: ir a Hotmart (abre en otra pestaña)">Comprar curso<span class="chevron" aria-hidden="true"></span></a></div></div>
+  </section>
+  <div class="closing-wrap" aria-hidden="true"><div class="art-slice closing-art" style="--x:500;--y:10350;--w:940;--h:342" aria-hidden="true"><img src="https://de-idea-a-corto.gentleisle66.chatgpt.site/assets/vsl.jpg" width="1440" height="10692" alt="" decoding="async"></div></div>
+
+</div>
+<script>
+(() => {
+  "use strict";
+  const root = document.getElementById("diac-landing");
+  if (!root || root.dataset.diacInitialized === "true") return;
+  root.dataset.diacInitialized = "true";
+
+  // Fit the available browser width, accounting for the scrollbar.
+  const fitWidth = () => root.style.setProperty("--diac-screen-width", `${document.documentElement.clientWidth}px`);
+  fitWidth();
+  window.addEventListener("resize", fitWidth, { passive:true });
+
+  const cards = [...root.querySelectorAll("button.stage-card")];
+  cards.forEach(card => card.addEventListener("click", () => {
+    const activate = !card.classList.contains("is-active");
+    cards.forEach(item => {
+      const active = item === card && activate;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+  }));
+  root.querySelector(".discover")?.addEventListener("click", event => {
+    const target = root.querySelector("#diac-presentacion");
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior:matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block:"start" });
+  });
+
+  // Keep Tiendup's own YouTube API callbacks untouched.
+  const slot = root.querySelector("#diac-vsl");
+  const frame = slot?.querySelector("iframe");
+  if (!frame) return;
+  const embed = new URL(frame.src);
+  embed.searchParams.set("enablejsapi", "1");
+  if (["https:", "http:"].includes(location.protocol)) embed.searchParams.set("origin", location.origin);
+  frame.src = embed.href;
+  const connectPlayer = () => {
+    if (!window.YT?.Player || !root.isConnected) return false;
+    new window.YT.Player(frame, { events: {
+      onReady: () => { slot.dataset.playbackStatus = "ready"; },
+      onStateChange: event => { if (event.data === 1) slot.dataset.playbackStatus = "playing"; },
+      onError: () => {
+        const notice = document.createElement("div");
+        notice.className = "video-fallback";
+        const text = document.createElement("p");
+        text.textContent = "Puedes ver la presentación en YouTube.";
+        const link = document.createElement("a");
+        link.href = "https://youtu.be/sUT9b-HiK-k";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "▶ Ver presentación";
+        notice.append(text, link);
+        slot.replaceChildren(notice);
+      }
+    }});
+    return true;
+  };
+  if (connectPlayer()) return;
+  const alreadyLoaded = [...document.scripts].some(item => /^https:\/\/(?:www\.)?youtube\.com\/(?:iframe_api|player_api)(?:[?#]|$)/.test(item.src));
+  if (!alreadyLoaded) {
+    const api = document.createElement("script");
+    api.src = "https://www.youtube.com/iframe_api";
+    api.async = true;
+    document.head.append(api);
+  }
+  let attempts = 0;
+  const timer = setInterval(() => {
+    if (!root.isConnected || connectPlayer() || ++attempts >= 150) clearInterval(timer);
+  }, 100);
+})();
+</script>
